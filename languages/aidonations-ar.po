@@ -1,0 +1,234 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Amnesty International Donations\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/donations\n"
+"POT-Creation-Date: 2024-02-08T16:05:08+00:00\n"
+"PO-Revision-Date: 2023-02-10 17:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: amnesty-donations.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: private/node_modules\n"
+
+#. Plugin Name of the plugin
+msgid "Humanity Donations"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/amnestywebsite/humanity-donations"
+msgstr ""
+
+#. Description of the plugin
+msgid "Add support for donations via WooCommerce"
+msgstr "إضافة دعم للتبرعات عبر WooCommerce"
+
+#. Author of the plugin
+msgid "Amnesty International"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.amnesty.org"
+msgstr ""
+
+#: amnesty-donations.php:112
+msgid "Donations"
+msgstr ""
+
+#. translators: [admin] %s: list of missing plugins
+#: amnesty-donations.php:169
+msgid ""
+"The Amnesty International Donations plugin requires these plugins to be "
+"active: %s"
+msgstr ""
+"يتطلب المكون الإضافي للتبرعات من منظمة العفو الدولية أن تكون هذه المكونات "
+"الإضافية نشطة: %s"
+
+#. translators: [admin]
+#: amnesty-donations.php:249
+msgid "Amnesty WooCommerce"
+msgstr "منظمة العفو الدولية ووكوميرسي"
+
+#. translators: [admin]
+#: includes/helpers.php:238 includes/helpers.php:253
+msgid "No product found."
+msgstr "ليس هناك أي منتج."
+
+#. translators: [admin]
+#: includes/helpers.php:244 includes/helpers.php:259
+msgid "No product found"
+msgstr "لم يتم العثور على أي منتج"
+
+#. translators: [admin/front] label for donation block when a custom donation amount can be specified
+#: includes/helpers.php:344 private/src/block/DisplayComponent.jsx:608
+msgid "Custom"
+msgstr "مخصص"
+
+#. translators: [front]
+#: includes/render.php:13
+msgid "Support human rights"
+msgstr "دعم حقوق الإنسان"
+
+#. translators: [front]
+#: includes/render.php:16
+msgid "Every donation matters!"
+msgstr "كل تبرع مهم!"
+
+#. translators: [front]
+#: includes/render.php:20
+msgid "Choose donation amount"
+msgstr "اختاروا مبلغ التبرع"
+
+#. translators: [admin/front]
+#: includes/render.php:24 private/src/block.js:56
+msgid "One-off"
+msgstr "لمرة واحدة"
+
+#. translators: [admin/front]
+#: includes/render.php:29 private/src/block.js:61
+msgid "Recurring"
+msgstr "التجديد التلقائي"
+
+#. translators: [admin/front]
+#: includes/render.php:37 private/src/block.js:17 private/src/block.js:94
+#: private/src/block/DisplayComponent.jsx:752
+msgid "Donate"
+msgstr "تبرع"
+
+#. translators: [admin]
+#: private/src/block.js:10 private/src/block.js:15
+msgid "Donation"
+msgstr "التبرع"
+
+#. translators: [admin]
+#: private/src/block.js:19
+msgid "Subscription"
+msgstr "اشتراك"
+
+#. translators: [admin]
+#: private/src/block.js:21
+msgid "Subscribe"
+msgstr "الاشتراك"
+
+#. translators: [admin]
+#: private/src/block.js:109
+msgid "Dark Background"
+msgstr "خلفية داكنة"
+
+#. translators: [admin]
+#: private/src/block.js:115
+msgid "Brand Background"
+msgstr "خلفية العلامة التجارية"
+
+#. translators: [admin] label for image selector on donation block
+#: private/src/block/components/PostMediaSelector.jsx:7
+msgid "Set Image"
+msgstr "تعيين صورة"
+
+#. translators: [admin] label for image selector on donation block
+#: private/src/block/components/PostMediaSelector.jsx:9
+msgid "Replace Image"
+msgstr "استبدل مسار الصورة"
+
+#. translators: [admin] label for image selector on donation block
+#: private/src/block/components/PostMediaSelector.jsx:11
+msgid "Remove Image"
+msgstr "احذف صورة"
+
+#. translators: [admin] label for adding a campaigns selector to the donations block
+#: private/src/block/DisplayComponent.jsx:322
+msgid "Choose campaigns field."
+msgstr "اختر حقل الحملات."
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:329
+msgid "Content"
+msgstr "المحتوى"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:331
+msgid "Title Size"
+msgstr "حجم العنوان"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:341
+msgid "Show image"
+msgstr "أعرض صورة"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:349
+msgid "Products"
+msgstr "المنتجات"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:354
+msgid "Show one-off donation"
+msgstr "إظهار التبرع لمرة واحدة"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:360
+msgid "One-off donation label"
+msgstr "تسمية التبرع لمرة واحدة"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:367
+msgid "Show subscription donation"
+msgstr "إظهار التبرع بالاشتراك"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:373
+msgid "subscription donation label"
+msgstr "تسمية التبرع بالاشتراك"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:381
+msgid "Pre-donation selection label"
+msgstr "تسمية اختيار ما قبل التبرع"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:390
+msgid "Campaigns"
+msgstr "حملات"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:397
+msgid "Show campaign options (donation only)"
+msgstr "إظهار خيارات الحملة (التبرع فقط)"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:405
+msgid "Campaign options field"
+msgstr "حقل خيارات الحملة"
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:477
+msgid "Title"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:488
+msgid "Description"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:544
+msgid "Donation Type"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:741
+msgid "Campaign Text"
+msgstr ""

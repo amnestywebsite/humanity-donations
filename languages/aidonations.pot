@@ -1,0 +1,228 @@
+# Copyright (C) 2024 Amnesty International
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Humanity Donations 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/donations\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-02-08T16:05:08+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: aidonations\n"
+
+#. Plugin Name of the plugin
+msgid "Humanity Donations"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/amnestywebsite/humanity-donations"
+msgstr ""
+
+#. Description of the plugin
+msgid "Add support for donations via WooCommerce"
+msgstr ""
+
+#. Author of the plugin
+msgid "Amnesty International"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.amnesty.org"
+msgstr ""
+
+#: amnesty-donations.php:112
+msgid "Donations"
+msgstr ""
+
+#. translators: [admin] %s: list of missing plugins
+#: amnesty-donations.php:169
+msgid "The Amnesty International Donations plugin requires these plugins to be active: %s"
+msgstr ""
+
+#. translators: [admin]
+#: amnesty-donations.php:249
+msgid "Amnesty WooCommerce"
+msgstr ""
+
+#. translators: [admin]
+#: includes/helpers.php:238
+#: includes/helpers.php:253
+msgid "No product found."
+msgstr ""
+
+#. translators: [admin]
+#: includes/helpers.php:244
+#: includes/helpers.php:259
+msgid "No product found"
+msgstr ""
+
+#. translators: [admin/front] label for donation block when a custom donation amount can be specified
+#: includes/helpers.php:344
+#: private/src/block/DisplayComponent.jsx:608
+msgid "Custom"
+msgstr ""
+
+#. translators: [front]
+#: includes/render.php:13
+msgid "Support human rights"
+msgstr ""
+
+#. translators: [front]
+#: includes/render.php:16
+msgid "Every donation matters!"
+msgstr ""
+
+#. translators: [front]
+#: includes/render.php:20
+msgid "Choose donation amount"
+msgstr ""
+
+#. translators: [admin/front]
+#: includes/render.php:24
+#: private/src/block.js:56
+msgid "One-off"
+msgstr ""
+
+#. translators: [admin/front]
+#: includes/render.php:29
+#: private/src/block.js:61
+msgid "Recurring"
+msgstr ""
+
+#. translators: [admin/front]
+#: includes/render.php:37
+#: private/src/block.js:17
+#: private/src/block.js:94
+#: private/src/block/DisplayComponent.jsx:752
+msgid "Donate"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block.js:10
+#: private/src/block.js:15
+msgid "Donation"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block.js:19
+msgid "Subscription"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block.js:21
+msgid "Subscribe"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block.js:109
+msgid "Dark Background"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block.js:115
+msgid "Brand Background"
+msgstr ""
+
+#. translators: [admin] label for image selector on donation block
+#: private/src/block/components/PostMediaSelector.jsx:7
+msgid "Set Image"
+msgstr ""
+
+#. translators: [admin] label for image selector on donation block
+#: private/src/block/components/PostMediaSelector.jsx:9
+msgid "Replace Image"
+msgstr ""
+
+#. translators: [admin] label for image selector on donation block
+#: private/src/block/components/PostMediaSelector.jsx:11
+msgid "Remove Image"
+msgstr ""
+
+#. translators: [admin] label for adding a campaigns selector to the donations block
+#: private/src/block/DisplayComponent.jsx:322
+msgid "Choose campaigns field."
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:329
+msgid "Content"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:331
+msgid "Title Size"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:341
+msgid "Show image"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:349
+msgid "Products"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:354
+msgid "Show one-off donation"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:360
+msgid "One-off donation label"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:367
+msgid "Show subscription donation"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:373
+msgid "subscription donation label"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:381
+msgid "Pre-donation selection label"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:390
+msgid "Campaigns"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:397
+msgid "Show campaign options (donation only)"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:405
+msgid "Campaign options field"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:477
+msgid "Title"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:488
+msgid "Description"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:544
+msgid "Donation Type"
+msgstr ""
+
+#. translators: [admin]
+#: private/src/block/DisplayComponent.jsx:741
+msgid "Campaign Text"
+msgstr ""

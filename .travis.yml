@@ -1,0 +1,88 @@
+os: linux
+dist: jammy
+language: php
+php:
+  - 8.2
+
+cache:
+  npm: true
+  yarn: true
+  directories:
+  - "$HOME/.composer/cache"
+  - "$HOME/.yarn"
+  - "./private/node_modules"
+  - "./vendor"
+
+before_install:
+- phpenv config-rm xdebug.ini
+
+install:
+- composer install
+- nvm install 20 && nvm use 20
+- corepack enable
+- cd private && yarn && cd ..
+
+stages:
+  - name: Lint
+    if: branch IS present
+  - name: Update Draft Release [DEV]
+    if: branch = develop AND type != pull_request
+  - name: Update Draft Release [STG]
+    if: branch = staging AND type != pull_request
+  - name: Update Draft Release [PRD]
+    if: branch = main AND type != pull_request
+
+jobs:
+  include:
+  - stage: Lint
+    script:
+    - cd private && yarn && yarn build && cd ..
+    - composer lint
+
+  - stage: Update Draft Release [DEV]
+    script:
+    - cd private && yarn && yarn build && cd ..
+    - zip -r ../humanity-donations-develop.zip ./ -x docs\* -x private\* -x vendor\* -x .\* -x CHANGELOG.md -x CODE_OF_CONDUCT.md -x composer.json -x composer.lock -x CONTRIBUTING.md -x LICENSE.md -x phpcs.xml -x SECURITY.md
+    deploy:
+      provider: releases
+      token:
+        secure: "gLXcmxsTyUhdqDu1TIiKg/xdD9ECO4XZ0ZXsyCbnzI83cRzQbXgM1iWNR5pmlTsnLXDzGx6hRze1LU8Mbl5YuO2tr/AG2Im1KbzELrgepjAJ0cRavJi/URPXxZnA0LaSBy4a+urhm7GAOUgTH51aF+ZX6B5/qdcteD533KjWrEauYaJNjBZgjipPGAjBh2/jGES25igoSQ3SOTlHgz44JrnXfQmB1qckf3jXEu90Q34SFvW4ejJKmHLxL0PO9+jbsL9wBq3CFB3da6lKrDEETL1JUiRbaOmOYeAGcylQoc9UkThK0vlkDX+wtUNDrLZO2wzmMq0JqLYKCod4UyA4lh4KV8SP3oFamMUZvXN/q17r2iKkLOMJOcnUd3G4ECOtysCI1DZqDXgz744xhmOqTztsQea248RyNh9xUXF3UBVLbo8g9S8Wh3xVI7poXeluK+6rqLsELP56ck/uYBgFsd58uO6dMtICNwdLOaYu52rMtB2ehUiXegT3RqkTJ+7VV0JO5r6A0VZFvnF+KDZghipvPaAv3P7wC+rhykkrJua91EP82Na9IjdMYBWpiTZzGHgZTi0fwQEvcZ/2TFWkJXzMuvVdhGPm58Y2W/kLL4ObVMXw/Zq81/f/LEy1YLRV28qTW4B8zaQ+OO5gt/v7Njob5EhPEPyf7v+cvezYXHI="
+      file: "../humanity-donations-develop.zip"
+      skip_cleanup: true
+      draft: true
+      overwrite: true
+      on:
+        repo: amnestywebsite/humanity-donations
+        branch: develop
+
+  - stage: Update Draft Release [STG]
+    script:
+    - cd private && yarn && yarn build && cd ..
+    - zip -r ../humanity-donations-staging.zip ./ -x docs\* -x private\* -x vendor\* -x .\* -x CHANGELOG.md -x CODE_OF_CONDUCT.md -x composer.json -x composer.lock -x CONTRIBUTING.md -x LICENSE.md -x phpcs.xml -x SECURITY.md
+    deploy:
+      provider: releases
+      token:
+        secure: "gLXcmxsTyUhdqDu1TIiKg/xdD9ECO4XZ0ZXsyCbnzI83cRzQbXgM1iWNR5pmlTsnLXDzGx6hRze1LU8Mbl5YuO2tr/AG2Im1KbzELrgepjAJ0cRavJi/URPXxZnA0LaSBy4a+urhm7GAOUgTH51aF+ZX6B5/qdcteD533KjWrEauYaJNjBZgjipPGAjBh2/jGES25igoSQ3SOTlHgz44JrnXfQmB1qckf3jXEu90Q34SFvW4ejJKmHLxL0PO9+jbsL9wBq3CFB3da6lKrDEETL1JUiRbaOmOYeAGcylQoc9UkThK0vlkDX+wtUNDrLZO2wzmMq0JqLYKCod4UyA4lh4KV8SP3oFamMUZvXN/q17r2iKkLOMJOcnUd3G4ECOtysCI1DZqDXgz744xhmOqTztsQea248RyNh9xUXF3UBVLbo8g9S8Wh3xVI7poXeluK+6rqLsELP56ck/uYBgFsd58uO6dMtICNwdLOaYu52rMtB2ehUiXegT3RqkTJ+7VV0JO5r6A0VZFvnF+KDZghipvPaAv3P7wC+rhykkrJua91EP82Na9IjdMYBWpiTZzGHgZTi0fwQEvcZ/2TFWkJXzMuvVdhGPm58Y2W/kLL4ObVMXw/Zq81/f/LEy1YLRV28qTW4B8zaQ+OO5gt/v7Njob5EhPEPyf7v+cvezYXHI="
+      file: "../humanity-donations-staging.zip"
+      skip_cleanup: true
+      draft: true
+      overwrite: true
+      on:
+        repo: amnestywebsite/humanity-donations
+        branch: staging
+
+  - stage: Update Draft Release [PRD]
+    script:
+    - cd private && yarn && yarn build && cd ..
+    - zip -r ../humanity-donations.zip ./ -x docs\* -x private\* -x vendor\* -x .\* -x CHANGELOG.md -x CODE_OF_CONDUCT.md -x composer.json -x composer.lock -x CONTRIBUTING.md -x LICENSE.md -x phpcs.xml -x SECURITY.md
+    deploy:
+      provider: releases
+      token:
+        secure: "gLXcmxsTyUhdqDu1TIiKg/xdD9ECO4XZ0ZXsyCbnzI83cRzQbXgM1iWNR5pmlTsnLXDzGx6hRze1LU8Mbl5YuO2tr/AG2Im1KbzELrgepjAJ0cRavJi/URPXxZnA0LaSBy4a+urhm7GAOUgTH51aF+ZX6B5/qdcteD533KjWrEauYaJNjBZgjipPGAjBh2/jGES25igoSQ3SOTlHgz44JrnXfQmB1qckf3jXEu90Q34SFvW4ejJKmHLxL0PO9+jbsL9wBq3CFB3da6lKrDEETL1JUiRbaOmOYeAGcylQoc9UkThK0vlkDX+wtUNDrLZO2wzmMq0JqLYKCod4UyA4lh4KV8SP3oFamMUZvXN/q17r2iKkLOMJOcnUd3G4ECOtysCI1DZqDXgz744xhmOqTztsQea248RyNh9xUXF3UBVLbo8g9S8Wh3xVI7poXeluK+6rqLsELP56ck/uYBgFsd58uO6dMtICNwdLOaYu52rMtB2ehUiXegT3RqkTJ+7VV0JO5r6A0VZFvnF+KDZghipvPaAv3P7wC+rhykkrJua91EP82Na9IjdMYBWpiTZzGHgZTi0fwQEvcZ/2TFWkJXzMuvVdhGPm58Y2W/kLL4ObVMXw/Zq81/f/LEy1YLRV28qTW4B8zaQ+OO5gt/v7Njob5EhPEPyf7v+cvezYXHI="
+      file: "../humanity-donations.zip"
+      skip_cleanup: true
+      draft: true
+      overwrite: true
+      on:
+        repo: amnestywebsite/humanity-donations
+        branch: main

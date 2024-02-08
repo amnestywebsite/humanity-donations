@@ -1,0 +1,252 @@
+.donation {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-width: 400px;
+  background: #e4e4e4;
+}
+
+.donation.is-style-dark {
+  background: #525252;
+
+  .donation-title,
+  .donation-description,
+  .donation-label,
+  .donation-campaignLabel,
+  .donation-campaignText,
+  .donation-productSelect {
+    color: #fff;
+  }
+
+  .donation-selectType {
+    color: #000;
+  }
+
+  .donation-tabs div {
+    border-bottom-color: #525252;
+
+    &.is-active {
+      border-bottom-color: #000;
+      color: #fff;
+    }
+  }
+}
+
+.donation-label,
+.donation-campaignLabel,
+.donation-title,
+.donation-description,
+.donation-image,
+.donation-main,
+.donation-campaignText {
+  margin-bottom: 10px;
+}
+
+.donation hr {
+  margin: 10px 0;
+  height: 1px;
+  border: none;
+  background-color: #000;
+}
+
+.donation-title,
+.donation-selectType,
+.donation-tabs {
+  font-family: var(--font-family-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.donation-label,
+.donation-campaignLabel {
+  display: block;
+  font-family: var(--font-family-secondary);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.donation-title,
+.donation-description {
+  text-align: center;
+}
+
+.donation-image img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.donation-selectType,
+.donation-tabs {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.donation-selectType label {
+  margin-right: 5px;
+  padding: 15px 30px;
+  width: 49.5%;
+  font-size: 24px;
+  text-align: center;
+  background-color: #b5b5b5;
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.donation-selectType label.is-active {
+  background-color: #000;
+  color: #fff;
+}
+
+.donation-options {
+  display: none;
+  flex-direction: column;
+
+  &.is-active {
+    display: flex;
+  }
+}
+
+.donation-tabs div {
+  flex: 1 1 auto;
+  margin-right: 5px;
+  padding: 10px 0;
+  background: #b5b5b5;
+  border-bottom: 4px solid #e4e4e4;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.is-active {
+    background-color: #000;
+    border-bottom-color: #000;
+    color: #fff
+  }
+}
+
+.donation-details,
+.donation-campaignText {
+  font-family: var(--font-family-primary);
+}
+
+.donation-details {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 70px;
+  color: #000;
+}
+
+.donation-details div {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  padding: 10px;
+  width: 100%;
+  background: #fff;
+
+  &.is-active {
+    z-index: 1;
+  }
+}
+
+.donation-details p {
+  margin: 0;
+}
+
+.donation-nyp {
+  position: relative;
+  display: block;
+}
+
+.donation-nyp [data-currency] {
+  position: absolute;
+  top: 9px; /* (42 - 24) / 2 */
+  left: 10px; /* 24 - (10 / 2) / 2 */
+  height: 24px;
+  background-color: #fff;
+  font-family: var(--font-family-secondary);
+
+  .rtl & {
+    right: 10px;
+    left: unset;
+  }
+}
+
+.donation-nyp input[type="number"] {
+  padding-left: 30px;
+
+  .rtl & {
+    padding-right: 24px;
+    padding-left: 0;
+  }
+}
+
+.external-donate-wrapper {
+  display: none;
+}
+
+.donation-priceWrapper {
+  position: relative;
+}
+
+.donation-priceWrapper .donation-currencySwitcher {
+  position: absolute;
+  right: 0;
+  width: 100px;
+}
+
+.donate-countrySwitcher,
+.donation-priceWrapper {
+  margin-bottom: 10px;
+}
+
+.donation-campaignWrap {
+  margin-bottom: 10px;
+}
+
+.donation-campaignWrap .checkboxGroup-button,
+.donation-campaignWrap .checkboxGroup-list {
+  width: 100%;
+}
+
+.donation.is-style-default {
+  background: #e4e4e4;
+
+  .donation-title,
+  .donation-description,
+  .donation-label,
+  .donation-campaignLabel,
+  .donation-campaignText,
+  .donation-selectType,
+  .donation-productSelect {
+    color: #000;
+  }
+
+  .donation-tabs div {
+    border-bottom-color: #e4e4e4;
+
+    &.is-active {
+      border-bottom-color: #000;
+    }
+  }
+}
+
+.donation .btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.donation .btn:hover,
+.donation .btn:active,
+.donation .btn:focus {
+  background-color: #fff;
+  color: #000;
+}

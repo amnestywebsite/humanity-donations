@@ -1,0 +1,138 @@
+.donation {
+  padding: 10px;
+}
+
+.donation,
+.donation * {
+  box-sizing: border-box;
+}
+
+.donation.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.donation-title,
+.donation-description,
+.donation-campaignText {
+  border: 1px dotted #000;
+  color: #000;
+}
+
+.donation-title h2,
+.donation-description,
+.donation-description p {
+  margin: 0 !important;
+}
+
+.donation-title [data-rich-text-placeholder]::after {
+  opacity: 1;
+}
+
+.donation .editor-post-featured-image div .components-button {
+  background-color: #fff;
+}
+
+.donation select {
+  margin-bottom: 12px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  appearance: listbox !important;
+  background: #fff !important;
+}
+
+.donation-selectType {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  gap: 24px;
+  color: #000;
+}
+
+.donation-selectType div {
+  width: 50%;
+}
+
+.donation-selectType label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-family-secondary);
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #b5b5b5;
+}
+
+.donation-selectType div:not(:last-child) {
+  margin: 0;
+}
+
+.donation-selectType.is-donation div:first-child label,
+.donation-selectType.is-subscription div:last-child label {
+  background-color: #000;
+  color: #fff;
+}
+
+.donation-selectType input[type="radio"] {
+  display: none;
+}
+
+.donation-productSelect {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: stretch;
+  color: #000;
+}
+
+.donation-label {
+  align-self: flex-start;
+}
+
+.donation-details p {
+  margin: 0 !important;
+  color: #000;
+}
+
+.donation .btn {
+  margin: 0;
+  font-family: var(--font-family-secondary) !important;
+  font-size: 20px !important;
+  text-transform: uppercase;
+  cursor: text;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.donation .btn:hover,
+.donation .btn:active,
+.donation .btn:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+.donation-options {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.donation .woocommerce-search-list.woocommerce-products {
+  border: 1px dotted #000;
+}
+
+.donation .woocommerce-search-list__search {
+  margin-top: 0;
+}
+
+.donation-productSelect .components-button {
+  margin-bottom: 12px;
+  align-self: center !important;
+}
+
+.donation-campaignText {
+  margin-bottom: 12px;
+}
