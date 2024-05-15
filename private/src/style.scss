@@ -102,6 +102,10 @@
   color: #fff;
 }
 
+.donation-selectType input[type="radio"] {
+  display: none;
+}
+
 .donation-options {
   display: none;
   flex-direction: column;
