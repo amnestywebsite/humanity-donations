@@ -250,3 +250,17 @@
   background-color: #fff;
   color: #000;
 }
+
+.fse .donation-details,
+.fse .donation-campaignText {
+  font-family: var(--wp--preset--font-family--primary);
+}
+
+.fse .donation-title,
+.fse .donation-selectType,
+.fse .donation-tabs,
+.fse .donation-label,
+.fse .donation-campaignLabel,
+.fse .donation-nyp [data-currency] {
+  font-family: var(--wp--preset--font-family--secondary);
+}
