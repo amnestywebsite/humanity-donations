@@ -14,14 +14,49 @@ if ( ! function_exists( 'amnesty_donations_kses_allowed_html' ) ) {
 			return $tags;
 		}
 
+		$attributes = _wp_add_global_attributes(
+			[
+				'aria-role' => true,
+			]
+		);
+
 		return array_merge_recursive(
 			$tags,
 			[
-				'span'   => _wp_add_global_attributes( [] ),
-				'select' => _wp_add_global_attributes( [] ),
-				'option' => _wp_add_global_attributes( [] ),
-				'input'  => array_merge(
-					_wp_add_global_attributes( [] ),
+				'header'   => $attributes,
+				'div'      => $attributes,
+				'h2'       => $attributes,
+				'p'        => $attributes,
+				'a'        => $attributes,
+				'span'     => $attributes,
+				'fieldset' => $attributes,
+				'legend'   => $attributes,
+				'hr'       => [],
+				'select'   => $attributes,
+				'option'   => $attributes,
+				'form'     => array_merge(
+					$attributes,
+					[
+						'method' => true,
+						'action' => true,
+					],
+				),
+				'button'   => array_merge(
+					$attributes,
+					[
+						'type'           => true,
+						'aria-has-popup' => true,
+					],
+				),
+				'label'    => array_merge(
+					$attributes,
+					[
+						'for'      => true,
+						'tabindex' => true,
+					],
+				),
+				'input'    => array_merge(
+					$attributes,
 					[
 						'type'        => true,
 						'name'        => true,
@@ -31,9 +66,10 @@ if ( ! function_exists( 'amnesty_donations_kses_allowed_html' ) ) {
 						'step'        => true,
 						'placeholder' => true,
 						'disabled'    => true,
-					] 
+						'required'    => true,
+					],
 				),
-			] 
+			]
 		);
 	}
 }
