@@ -10,7 +10,7 @@ if ( ! function_exists( 'amnesty_donations_kses_allowed_html' ) ) {
 	 * @return array
 	 */
 	function amnesty_donations_kses_allowed_html( array $tags, string $context ): array {
-		if ( 'donations' !== $context ) {
+		if ( ! in_array( $context, [ 'donations', 'post' ], true ) ) {
 			return $tags;
 		}
 
@@ -37,8 +37,9 @@ if ( ! function_exists( 'amnesty_donations_kses_allowed_html' ) ) {
 				'form'     => array_merge(
 					$attributes,
 					[
-						'method' => true,
-						'action' => true,
+						'method'    => true,
+						'action'    => true,
+						'data-info' => true,
 					],
 				),
 				'button'   => array_merge(
