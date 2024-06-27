@@ -52,7 +52,7 @@
 .donation-title,
 .donation-selectType,
 .donation-tabs {
-  font-family: var(--font-family-secondary);
+  font-family: var(--wp--preset--font-family--secondary);
   font-weight: 600;
   text-transform: uppercase;
   color: #000;
@@ -61,7 +61,7 @@
 .donation-label,
 .donation-campaignLabel {
   display: block;
-  font-family: var(--font-family-secondary);
+  font-family: var(--wp--preset--font-family--secondary);
   font-weight: 600;
   line-height: 1;
 }
@@ -136,7 +136,7 @@
 
 .donation-details,
 .donation-campaignText {
-  font-family: var(--font-family-primary);
+  font-family: var(--wp--preset--font-family--primary);
 }
 
 .donation-details {
@@ -174,7 +174,7 @@
   left: 10px; /* 24 - (10 / 2) / 2 */
   height: 24px;
   background-color: #fff;
-  font-family: var(--font-family-secondary);
+  font-family: var(--wp--preset--font-family--secondary);
 
   .rtl & {
     right: 10px;
