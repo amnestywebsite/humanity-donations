@@ -68,7 +68,7 @@ if ( ! function_exists( 'amnesty_render_donation_block' ) ) {
 				function ( $carry, $donation ) {
 					return array_merge( $carry, array_map( 'wc_get_product', $donation->get_children() ) );
 				},
-				[] 
+				[]
 			);
 		}
 
@@ -80,7 +80,7 @@ if ( ! function_exists( 'amnesty_render_donation_block' ) ) {
 				function ( $carry, $subscription ) {
 					return array_merge( $carry, array_map( 'wc_get_product', $subscription->get_children() ) );
 				},
-				[] 
+				[]
 			);
 		}
 

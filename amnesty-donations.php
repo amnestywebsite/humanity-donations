@@ -8,7 +8,7 @@ namespace Amnesty\Donations;
 Plugin Name:       Humanity Donations
 Plugin URI:        https://github.com/amnestywebsite/humanity-donations
 Description:       Add support for donations via WooCommerce
-Version:           1.0.1
+Version:           1.1.0
 Author:            Amnesty International
 Author URI:        https://www.amnesty.org
 License:           GPLv2
@@ -278,7 +278,7 @@ class Init {
 	public function register_block_assets(): void {
 		wp_enqueue_style( 'aidonations-style', plugins_url( '/assets/styles/app.css', __FILE__ ), [], $this->data['Version'], 'all' );
 		wp_enqueue_style( 'aidonations-editor', plugins_url( '/assets/styles/block.css', __FILE__ ), [ 'aidonations-style' ], $this->data['Version'], 'all' );
-		wp_enqueue_script( 'aidonations-editor', plugins_url( '/assets/scripts/block.js', __FILE__ ), [ 'wp-blocks' ], $this->data['Version'], true );
+		wp_enqueue_script( 'aidonations-editor', plugins_url( '/assets/scripts/block.js', __FILE__ ), [ 'wp-blocks', 'wc-settings' ], $this->data['Version'], true );
 	}
 
 	/**
