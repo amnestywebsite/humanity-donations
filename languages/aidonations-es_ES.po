@@ -8,9 +8,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-08T16:05:08+00:00\n"
-"PO-Revision-Date: 2023-02-10 17:25+0000\n"
-"Language: ar\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"PO-Revision-Date: 2023-02-10 17:24+0000\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -34,7 +34,7 @@ msgstr ""
 #. Description of the plugin
 #: amnesty-donations.php
 msgid "Add support for donations via WooCommerce"
-msgstr "إضافة دعم للتبرعات عبر WooCommerce"
+msgstr "Agrega soporte para donaciones a través de WooCommerce"
 
 #. Author of the plugin
 #: amnesty-donations.php
@@ -53,57 +53,57 @@ msgstr ""
 #. translators: [admin] %s: list of missing plugins
 #: amnesty-donations.php:169
 msgid "The Amnesty International Donations plugin requires these plugins to be active: %s"
-msgstr "يتطلب المكون الإضافي للتبرعات من منظمة العفو الدولية أن تكون هذه المكونات الإضافية نشطة: %s"
+msgstr "El complemento Donaciones de Amnistía Internacional requiere que estos complementos estén activos: %s"
 
 #. translators: [admin]
 #: amnesty-donations.php:249
 msgid "Amnesty WooCommerce"
-msgstr "منظمة العفو الدولية ووكوميرسي"
+msgstr "Amnistía WooCommerce"
 
 #. translators: [admin]
 #: includes/helpers.php:238
 #: includes/helpers.php:253
 msgid "No product found."
-msgstr "ليس هناك أي منتج."
+msgstr "No se encontró ningún producto"
 
 #. translators: [admin]
 #: includes/helpers.php:244
 #: includes/helpers.php:259
 msgid "No product found"
-msgstr "لم يتم العثور على أي منتج"
+msgstr "No se encontró ningún producto"
 
 #. translators: [admin/front] label for donation block when a custom donation amount can be specified
 #: includes/helpers.php:344
 #: assets/scripts/block.js:2064
 msgid "Custom"
-msgstr "مخصص"
+msgstr "Personalizado"
 
 #. translators: [front]
 #: includes/render.php:13
 msgid "Support human rights"
-msgstr "دعم حقوق الإنسان"
+msgstr "Apoyar los derechos humanos"
 
 #. translators: [front]
 #: includes/render.php:16
 msgid "Every donation matters!"
-msgstr "كل تبرع مهم!"
+msgstr "¡Cada donación importa!"
 
 #. translators: [front]
 #: includes/render.php:20
 msgid "Choose donation amount"
-msgstr "اختاروا مبلغ التبرع"
+msgstr "Elige el importe de la donación"
 
 #. translators: [admin/front]
 #: includes/render.php:24
 #: assets/scripts/block.js:2276
 msgid "One-off"
-msgstr "لمرة واحدة"
+msgstr "Única"
 
 #. translators: [admin/front]
 #: includes/render.php:29
 #: assets/scripts/block.js:2281
 msgid "Recurring"
-msgstr "التجديد التلقائي"
+msgstr "Periódica"
 
 #. translators: [admin/front]
 #: includes/render.php:37
@@ -111,108 +111,108 @@ msgstr "التجديد التلقائي"
 #: assets/scripts/block.js:2237
 #: assets/scripts/block.js:2314
 msgid "Donate"
-msgstr "تبرع"
+msgstr "Donar"
 
 #. translators: [admin]
 #: assets/scripts/block.js:2230
 #: assets/scripts/block.js:2235
 msgid "Donation"
-msgstr "التبرع"
+msgstr "Donación"
 
 #. translators: [admin]
 #: assets/scripts/block.js:2239
 msgid "Subscription"
-msgstr "اشتراك"
+msgstr "Suscripción"
 
 #. translators: [admin]
 #: assets/scripts/block.js:2241
 msgid "Subscribe"
-msgstr "الاشتراك"
+msgstr "Suscribirse"
 
 #. translators: [admin]
 #: assets/scripts/block.js:2329
 msgid "Dark Background"
-msgstr "خلفية داكنة"
+msgstr "Fondo oscuro"
 
 #. translators: [admin] label for image selector on donation block
 #: assets/scripts/block.js:1297
 msgid "Set Image"
-msgstr "تعيين صورة"
+msgstr "Asignar imagen"
 
 #. translators: [admin] label for image selector on donation block
 #: assets/scripts/block.js:1299
 msgid "Replace Image"
-msgstr "استبدل مسار الصورة"
+msgstr "Reemplazar Imagen"
 
 #. translators: [admin] label for image selector on donation block
 #: assets/scripts/block.js:1301
 msgid "Remove Image"
-msgstr "احذف صورة"
+msgstr "Borrar imagen"
 
 #. translators: [admin] label for adding a campaigns selector to the donations block
 #: assets/scripts/block.js:1778
 msgid "Choose campaigns field."
-msgstr "اختر حقل الحملات."
+msgstr "Elija el campo campañas."
 
 #. translators: [admin]
 #: assets/scripts/block.js:1785
 msgid "Content"
-msgstr "المحتوى"
+msgstr "Contenido"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1787
 msgid "Title Size"
-msgstr "حجم العنوان"
+msgstr "Tamaño del título"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1797
 msgid "Show image"
-msgstr "أعرض صورة"
+msgstr "Mostrar imagen"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1805
 msgid "Products"
-msgstr "المنتجات"
+msgstr "Productos"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1810
 msgid "Show one-off donation"
-msgstr "إظهار التبرع لمرة واحدة"
+msgstr "Mostrar donación única"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1816
 msgid "One-off donation label"
-msgstr "تسمية التبرع لمرة واحدة"
+msgstr "Etiqueta de donación única"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1823
 msgid "Show subscription donation"
-msgstr "إظهار التبرع بالاشتراك"
+msgstr "Mostrar donación de suscripción"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1829
 msgid "subscription donation label"
-msgstr "تسمية التبرع بالاشتراك"
+msgstr "etiqueta de donación de suscripción"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1837
 msgid "Pre-donation selection label"
-msgstr "تسمية اختيار ما قبل التبرع"
+msgstr "Etiqueta de selección previa a la donación"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1846
 msgid "Campaigns"
-msgstr "حملات"
+msgstr "Campañas"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1853
 msgid "Show campaign options (donation only)"
-msgstr "إظهار خيارات الحملة (التبرع فقط)"
+msgstr "Mostrar opciones de campaña (solo donación)"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1861
 msgid "Campaign options field"
-msgstr "حقل خيارات الحملة"
+msgstr "Campo Opciones de campaña"
 
 #. translators: [admin]
 #: assets/scripts/block.js:1933
