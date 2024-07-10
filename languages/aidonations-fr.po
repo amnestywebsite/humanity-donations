@@ -2,44 +2,47 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Amnesty International Donations\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/donations\n"
-"POT-Creation-Date: 2024-02-08T16:05:08+00:00\n"
-"PO-Revision-Date: 2023-02-10 17:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-02-08T16:05:08+00:00\n"
+"PO-Revision-Date: 2023-02-10 17:24+0000\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: amnesty-donations.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: assets\n"
 "X-Poedit-SearchPathExcluded-1: private/node_modules\n"
 
 #. Plugin Name of the plugin
+#: amnesty-donations.php
 msgid "Humanity Donations"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: amnesty-donations.php
 msgid "https://github.com/amnestywebsite/humanity-donations"
 msgstr ""
 
 #. Description of the plugin
+#: amnesty-donations.php
 msgid "Add support for donations via WooCommerce"
 msgstr "Ajouter un soutien pour les dons via WooCommerce"
 
 #. Author of the plugin
+#: amnesty-donations.php
 msgid "Amnesty International"
 msgstr ""
 
 #. Author URI of the plugin
+#: amnesty-donations.php
 msgid "https://www.amnesty.org"
 msgstr ""
 
@@ -49,12 +52,8 @@ msgstr ""
 
 #. translators: [admin] %s: list of missing plugins
 #: amnesty-donations.php:169
-msgid ""
-"The Amnesty International Donations plugin requires these plugins to be "
-"active: %s"
-msgstr ""
-"Pour fonctionner, le plugin Dons à Amnesty International a besoin que ces "
-"plugins soient actifs : %s"
+msgid "The Amnesty International Donations plugin requires these plugins to be active: %s"
+msgstr "Pour fonctionner, le plugin Dons à Amnesty International a besoin que ces plugins soient actifs : %s"
 
 #. translators: [admin]
 #: amnesty-donations.php:249
@@ -62,17 +61,20 @@ msgid "Amnesty WooCommerce"
 msgstr "Amnesty WooCommerce"
 
 #. translators: [admin]
-#: includes/helpers.php:238 includes/helpers.php:253
+#: includes/helpers.php:238
+#: includes/helpers.php:253
 msgid "No product found."
 msgstr "Aucun produit trouvé."
 
 #. translators: [admin]
-#: includes/helpers.php:244 includes/helpers.php:259
+#: includes/helpers.php:244
+#: includes/helpers.php:259
 msgid "No product found"
 msgstr "Aucun produit trouvé"
 
 #. translators: [admin/front] label for donation block when a custom donation amount can be specified
-#: includes/helpers.php:344 private/src/block/DisplayComponent.jsx:608
+#: includes/helpers.php:344
+#: assets/scripts/block.js:2064
 msgid "Custom"
 msgstr "Personnalisé"
 
@@ -92,142 +94,142 @@ msgid "Choose donation amount"
 msgstr "Sélectionnez le montant du don"
 
 #. translators: [admin/front]
-#: includes/render.php:24 private/src/block.js:56
+#: includes/render.php:24
+#: assets/scripts/block.js:2276
 msgid "One-off"
 msgstr "Ponctuel"
 
 #. translators: [admin/front]
-#: includes/render.php:29 private/src/block.js:61
+#: includes/render.php:29
+#: assets/scripts/block.js:2281
 msgid "Recurring"
 msgstr "Récurrent"
 
 #. translators: [admin/front]
-#: includes/render.php:37 private/src/block.js:17 private/src/block.js:94
-#: private/src/block/DisplayComponent.jsx:752
+#: includes/render.php:37
+#: assets/scripts/block.js:2208
+#: assets/scripts/block.js:2237
+#: assets/scripts/block.js:2314
 msgid "Donate"
 msgstr "Faire un don"
 
 #. translators: [admin]
-#: private/src/block.js:10 private/src/block.js:15
+#: assets/scripts/block.js:2230
+#: assets/scripts/block.js:2235
 msgid "Donation"
 msgstr "Don"
 
 #. translators: [admin]
-#: private/src/block.js:19
+#: assets/scripts/block.js:2239
 msgid "Subscription"
 msgstr "Abonnement"
 
 #. translators: [admin]
-#: private/src/block.js:21
+#: assets/scripts/block.js:2241
 msgid "Subscribe"
 msgstr "S'abonner"
 
 #. translators: [admin]
-#: private/src/block.js:109
+#: assets/scripts/block.js:2329
 msgid "Dark Background"
 msgstr "Arrière plan foncé"
 
-#. translators: [admin]
-#: private/src/block.js:115
-msgid "Brand Background"
-msgstr "Arrière plan de la marque"
-
 #. translators: [admin] label for image selector on donation block
-#: private/src/block/components/PostMediaSelector.jsx:7
+#: assets/scripts/block.js:1297
 msgid "Set Image"
 msgstr "Définir l'image"
 
 #. translators: [admin] label for image selector on donation block
-#: private/src/block/components/PostMediaSelector.jsx:9
+#: assets/scripts/block.js:1299
 msgid "Replace Image"
 msgstr "Remplacer l'image"
 
 #. translators: [admin] label for image selector on donation block
-#: private/src/block/components/PostMediaSelector.jsx:11
+#: assets/scripts/block.js:1301
 msgid "Remove Image"
 msgstr "Supprimer l'image"
 
 #. translators: [admin] label for adding a campaigns selector to the donations block
-#: private/src/block/DisplayComponent.jsx:322
+#: assets/scripts/block.js:1778
 msgid "Choose campaigns field."
 msgstr "Choisissez le champ campagnes."
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:329
+#: assets/scripts/block.js:1785
 msgid "Content"
 msgstr "Contenu"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:331
+#: assets/scripts/block.js:1787
 msgid "Title Size"
 msgstr "Taille du titre"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:341
+#: assets/scripts/block.js:1797
 msgid "Show image"
 msgstr "Afficher l'image"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:349
+#: assets/scripts/block.js:1805
 msgid "Products"
 msgstr "Produits"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:354
+#: assets/scripts/block.js:1810
 msgid "Show one-off donation"
 msgstr "Afficher un don unique"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:360
+#: assets/scripts/block.js:1816
 msgid "One-off donation label"
 msgstr "Étiquette de don unique"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:367
+#: assets/scripts/block.js:1823
 msgid "Show subscription donation"
 msgstr "Afficher le don d’abonnement"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:373
+#: assets/scripts/block.js:1829
 msgid "subscription donation label"
 msgstr "étiquette de don d’abonnement"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:381
+#: assets/scripts/block.js:1837
 msgid "Pre-donation selection label"
 msgstr "Étiquette de sélection préalable au don"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:390
+#: assets/scripts/block.js:1846
 msgid "Campaigns"
 msgstr "Campagnes"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:397
+#: assets/scripts/block.js:1853
 msgid "Show campaign options (donation only)"
 msgstr "Afficher les options de campagne (don uniquement)"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:405
+#: assets/scripts/block.js:1861
 msgid "Campaign options field"
 msgstr "Champ Options de campagne"
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:477
+#: assets/scripts/block.js:1933
 msgid "Title"
 msgstr ""
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:488
+#: assets/scripts/block.js:1944
 msgid "Description"
 msgstr ""
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:544
+#: assets/scripts/block.js:2000
 msgid "Donation Type"
 msgstr ""
 
 #. translators: [admin]
-#: private/src/block/DisplayComponent.jsx:741
+#: assets/scripts/block.js:2197
 msgid "Campaign Text"
 msgstr ""
