@@ -148,3 +148,7 @@
 .wp-block-amnesty-core-hero .donation .btn {
   justify-content: center;
 }
+
+.editor-styles-wrapper .donation.is-style-dark h2 {
+  color: var(--wp--preset--color--white) !important;
+}
