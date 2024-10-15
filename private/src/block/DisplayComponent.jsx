@@ -475,7 +475,6 @@ class DisplayComponent extends Component {
             allowedFormats={[]}
             format="string"
             placeholder={/* translators: [admin] */ __('Title', 'aidonations')}
-            keepPlaceholderOnFocus={true}
             value={attributes.title}
             onChange={(title) => setAttributes({ title })}
           />
@@ -486,7 +485,6 @@ class DisplayComponent extends Component {
             allowedFormats={[]}
             format="string"
             placeholder={/* translators: [admin] */ __('Description', 'aidonations')}
-            keepPlaceholderOnFocus={true}
             value={attributes.description}
             onChange={(description) => setAttributes({ description })}
           />
@@ -551,9 +549,10 @@ class DisplayComponent extends Component {
                 type="radio"
                 value={option.value}
                 checked={selected === option.value}
+                onChange={() => null}
               />
               <label
-                for={`${option.label.toLowerCase()}-option`}
+                htmlFor={`${option.label.toLowerCase()}-option`}
                 onClick={() => this.setState({ selected: option.value }) }
               >{option.label}</label>
             </div>
@@ -739,7 +738,6 @@ class DisplayComponent extends Component {
           allowedFormats={[]}
           format="string"
           placeholder={/* translators: [admin] */ __('Campaign Text', 'aidonations')}
-          keepPlaceholderOnFocus={true}
           value={attributes.campaignDescription}
           onChange={(campaignDescription) => setAttributes({ campaignDescription })}
         />
@@ -750,7 +748,6 @@ class DisplayComponent extends Component {
           allowedFormats={[]}
           format="string"
           placeholder={/* translators: [admin/front] */ __('Donate', 'aidonations')}
-          keepPlaceholderOnFocus={false}
           value={attributes.buttonText}
           onChange={(buttonText) => setAttributes({ buttonText })}
         />
