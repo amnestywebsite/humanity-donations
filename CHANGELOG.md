@@ -1,3 +1,9 @@
+### v1.1.1
+Fixes:
+- Remove deprecated RichText properties in block display component
+- Incorrect React property in block display component
+- Incorrect block title colour in editor with dark style block
+
 ### v1.1.0
 Features:
 - Introduce full site editing support
