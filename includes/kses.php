@@ -68,6 +68,7 @@ if ( ! function_exists( 'amnesty_donations_kses_allowed_html' ) ) {
 						'placeholder' => true,
 						'disabled'    => true,
 						'required'    => true,
+						'checked'     => true,
 					],
 				),
 			]
