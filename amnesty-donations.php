@@ -19,6 +19,7 @@ Network:           true
 Requires PHP:      8.2.0
 Requires at least: 5.8.0
 Tested up to:      6.6.2
+Requires Plugins:  woocommerce, woocommerce-subscriptions
 */
 
 use WC_Cart;
@@ -46,13 +47,6 @@ class Init {
 	public static $file = __FILE__;
 
 	/**
-	 * List of dependent plugins
-	 *
-	 * @var array
-	 */
-	protected static $dependencies = [];
-
-	/**
 	 * Plugin data
 	 *
 	 * @var array
@@ -64,15 +58,6 @@ class Init {
 	 */
 	public function __construct() {
 		$this->data = get_plugin_data( __FILE__ );
-
-		static::$dependencies = [
-			'woocommerce.php'                  => __( 'WooCommerce', 'woocommerce' ),
-			'woocommerce-checkout-manager.php' => __( 'Checkout Manager for WooCommerce', 'woocommerce-checkout-manager' ),
-			'woocommerce-name-your-price.php'  => __( 'WooCommerce Name Your Price', 'wc_name_your_price' ),
-			'woocommerce-subscriptions.php'    => __( 'WooCommerce Subscriptions', 'woocommerce-subscriptions' ),
-		];
-
-		add_action( 'all_admin_notices', [ $this, 'check_dependencies' ] );
 
 		add_filter( 'register_translatable_package', [ $this, 'register_translatable_package' ], 12 );
 
@@ -135,41 +120,6 @@ class Init {
 		}
 
 		return WC()->session->get( 'user_currency' );
-	}
-
-	/**
-	 * Output warning & deactivate if dependent plugins aren't active
-	 *
-	 * @return void
-	 */
-	public function check_dependencies(): void {
-		$plugins = get_option( 'active_plugins' );
-		if ( is_multisite() ) {
-			$plugins = array_keys( get_site_option( 'active_sitewide_plugins' ) );
-		}
-
-		$plugins = array_unique( array_map( 'basename', $plugins ) );
-		$missing = array_diff( array_keys( static::$dependencies ), $plugins );
-
-		if ( empty( $missing ) ) {
-			return;
-		}
-
-		$missing_labels = [];
-
-		foreach ( $missing as $key ) {
-			$missing_labels[] = static::$dependencies[ $key ];
-		}
-
-		$missing = implode( ', ', $missing_labels );
-
-		printf(
-			'<div class="notice notice-error"><p>%s</p></div>',
-			// translators: [admin] %s: list of missing plugins
-			sprintf( esc_html__( 'The Amnesty International Donations plugin requires these plugins to be active: %s', 'aidonations' ), esc_html( $missing ) )
-		);
-
-		deactivate_plugins( plugin_basename( __FILE__ ), false, is_multisite() );
 	}
 
 	/**
