@@ -278,7 +278,7 @@ class Init {
 	public function register_block_assets(): void {
 		wp_enqueue_style( 'aidonations-style', plugins_url( '/assets/styles/app.css', __FILE__ ), [], $this->data['Version'], 'all' );
 		wp_enqueue_style( 'aidonations-editor', plugins_url( '/assets/styles/block.css', __FILE__ ), [ 'aidonations-style' ], $this->data['Version'], 'all' );
-		wp_enqueue_script( 'aidonations-editor', plugins_url( '/assets/scripts/block.js', __FILE__ ), [ 'wp-blocks', 'wc-settings' ], $this->data['Version'], true );
+		wp_enqueue_script( 'aidonations-editor', plugins_url( '/assets/scripts/block.js', __FILE__ ), [ 'lodash', 'wp-blocks', 'wc-settings' ], $this->data['Version'], true );
 	}
 
 	/**
