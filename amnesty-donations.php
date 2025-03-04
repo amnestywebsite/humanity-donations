@@ -63,8 +63,6 @@ class Init {
 	 * Bind hooks
 	 */
 	public function __construct() {
-		$this->data = get_plugin_data( __FILE__ );
-
 		static::$dependencies = [
 			'woocommerce.php'                  => __( 'WooCommerce', 'woocommerce' ),
 			'woocommerce-checkout-manager.php' => __( 'Checkout Manager for WooCommerce', 'woocommerce-checkout-manager' ),
@@ -76,7 +74,7 @@ class Init {
 
 		add_filter( 'register_translatable_package', [ $this, 'register_translatable_package' ], 12 );
 
-		add_action( 'plugins_loaded', [ $this, 'textdomain' ] );
+		add_action( 'init', [ $this, 'textdomain' ] );
 		add_action( 'init', [ $this, 'register_block' ] );
 		add_action( 'init', [ $this, 'register_meta' ] );
 
@@ -178,6 +176,8 @@ class Init {
 	 * @return void
 	 */
 	public function textdomain(): void {
+		$this->data = get_plugin_data( __FILE__ );
+
 		load_plugin_textdomain( 'aidonations', false, basename( __DIR__ ) . '/languages' );
 	}
 
