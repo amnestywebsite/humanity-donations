@@ -1,26 +1,26 @@
 <?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 
+/**
+ * Plugin Name:       Humanity Donations
+ * Plugin URI:        https://github.com/amnestywebsite/humanity-donations
+ * Description:       Add support for donations via WooCommerce
+ * Version:           1.1.2
+ * Author:            Amnesty International
+ * Author URI:        https://www.amnesty.org
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       aidonations
+ * Domain Path:       /languages
+ * Network:           true
+ * Requires PHP:      8.2.0
+ * Requires at least: 5.8.0
+ * Tested up to:      6.6.2
+ * Requires plugins:  woocommerce, woocommerce-subscriptions
+ */
+
 declare( strict_types = 1 );
 
 namespace Amnesty\Donations;
-
-/*
-Plugin Name:       Humanity Donations
-Plugin URI:        https://github.com/amnestywebsite/humanity-donations
-Description:       Add support for donations via WooCommerce
-Version:           1.1.1
-Author:            Amnesty International
-Author URI:        https://www.amnesty.org
-License:           GPLv2
-License URI:       https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:       aidonations
-Domain Path:       /languages
-Network:           true
-Requires PHP:      8.2.0
-Requires at least: 5.8.0
-Tested up to:      6.6.2
-Requires Plugins:  woocommerce, woocommerce-subscriptions
-*/
 
 use WC_Cart;
 use WC_Product;

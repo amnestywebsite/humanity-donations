@@ -1,3 +1,13 @@
+### v1.1.2
+Fixes:
+- Add missing script dependency
+
+Localisation:
+- Add support for Slovenian language
+
+CI:
+- Fix deployments
+
 ### v1.1.1
 Fixes:
 - Remove deprecated RichText properties in block display component
