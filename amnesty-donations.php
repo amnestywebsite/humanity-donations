@@ -218,6 +218,21 @@ class Init {
 
 		wp_enqueue_style( 'aidonations-style', plugins_url( '/assets/styles/app.css', __FILE__ ), [], $this->data['Version'], 'all' );
 		wp_enqueue_script( 'aidonations-app', plugins_url( '/assets/scripts/app.js', __FILE__ ), [], $this->data['Version'], true );
+
+		if ( ! current_theme_supports( 'woocommerce' ) ) {
+			return;
+		}
+
+		wp_localize_script(
+			'aidonations-app',
+			'amnestyWC',
+			[
+				'nonce'  => wp_create_nonce( 'amnesty-wc' ),
+				'wooccm' => amnesty_get_wooccm_fields(
+					fn ( $field ) => empty( $field['disabled'] ) && 'select' === $field['type'],
+				),
+			],
+		);
 	}
 
 	/**
@@ -229,6 +244,21 @@ class Init {
 		wp_enqueue_style( 'aidonations-style', plugins_url( '/assets/styles/app.css', __FILE__ ), [], $this->data['Version'], 'all' );
 		wp_enqueue_style( 'aidonations-editor', plugins_url( '/assets/styles/block.css', __FILE__ ), [ 'aidonations-style' ], $this->data['Version'], 'all' );
 		wp_enqueue_script( 'aidonations-editor', plugins_url( '/assets/scripts/block.js', __FILE__ ), [ 'lodash', 'wp-blocks', 'wc-settings' ], $this->data['Version'], true );
+
+		if ( ! current_theme_supports( 'woocommerce' ) ) {
+			return;
+		}
+
+		wp_localize_script(
+			'aidonations-editor',
+			'amnestyWC',
+			[
+				'nonce'  => wp_create_nonce( 'amnesty-wc' ),
+				'wooccm' => amnesty_get_wooccm_fields(
+					fn ( $field ) => empty( $field['disabled'] ) && 'select' === $field['type'],
+				),
+			],
+		);
 	}
 
 	/**
