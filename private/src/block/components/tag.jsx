@@ -5,7 +5,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-const { Button, Dashicon, IconButton, Popover } = wp.components;
+const { Button, Dashicon, Popover } = wp.components;
 const { withInstanceId, withState } = wp.compose;
 const { Fragment } = wp.element;
 const { __, sprintf } = wp.i18n;
@@ -66,7 +66,7 @@ const Tag = ({
         <Popover onClose={() => setState(() => ({ isVisible: false }))}>{popoverContents}</Popover>
       )}
       {remove && (
-        <IconButton
+        <Button
           className="woocommerce-tag__remove"
           icon={<Dashicon icon="dismiss" size={20} />}
           onClick={remove(id)}
