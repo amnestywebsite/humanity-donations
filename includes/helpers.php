@@ -100,10 +100,6 @@ if ( ! function_exists( 'amnesty_get_wooccm_field' ) ) {
 			return [];
 		}
 
-		if ( ! is_admin() ) {
-			$field_name = sprintf( 'additional_%s', $field_name );
-		}
-
 		$cache_key = sprintf( '%s-%s', __FUNCTION__, $field_name );
 		$cached    = wp_cache_get( $cache_key );
 
@@ -111,9 +107,7 @@ if ( ! function_exists( 'amnesty_get_wooccm_field' ) ) {
 			return $cached;
 		}
 
-		if ( is_admin() ) {
-			$fields = array_column( $fields, null, 'name' );
-		}
+		$fields = array_column( $fields, null, 'name' );
 
 		if ( ! isset( $fields[ $field_name ] ) ) {
 			return [];
@@ -185,19 +179,12 @@ if ( ! function_exists( 'amnesty_get_campaign_field_options' ) ) {
 			return [];
 		}
 
-		if ( is_admin() ) {
-			return array_filter(
-				array_map(
-					function ( $op ) {
-						return $op['label'];
-					},
-					$field['options']
-				),
-				$filter_callback
-			);
+		$options = $field['options'];
+		if ( is_array( array_values( $options )[0] ) ) {
+			$options = array_map( fn ( array $option ): string => $option['label'], $options );
 		}
 
-		return array_filter( $field['options'], $filter_callback );
+		return array_filter( $options, $filter_callback );
 	}
 }
 
