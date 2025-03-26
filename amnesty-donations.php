@@ -4,7 +4,7 @@
  * Plugin Name:       Humanity Donations
  * Plugin URI:        https://github.com/amnestywebsite/humanity-donations
  * Description:       Add support for donations via WooCommerce
- * Version:           1.1.2
+ * Version:           1.1.3
  * Author:            Amnesty International
  * Author URI:        https://www.amnesty.org
  * License:           GPL-2.0-or-later

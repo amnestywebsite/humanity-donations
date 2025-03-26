@@ -1,3 +1,17 @@
+### v1.1.3
+Fixes:
+- Load text domain later (WP 6.7 compat.)
+- Add missing "checked" attribute to KSES
+
+Localisation:
+- Migrate localisation data from theme
+
+Improvements:
+- Migrate plugin dependency check to WP native variant
+
+CI:
+- Migrate from Travis CI to GitHub Actions
+
 ### v1.1.2
 Fixes:
 - Add missing script dependency
