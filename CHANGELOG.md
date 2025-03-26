@@ -1,3 +1,13 @@
+### v1.1.4
+Fixes:
+- Campaigns selection in Donation block
+
+Build:
+- Bump cross-spawn version
+- Bump nanoid version
+- Bump braces version
+- Bump webpack version
+
 ### v1.1.3
 Fixes:
 - Load text domain later (WP 6.7 compat.)
