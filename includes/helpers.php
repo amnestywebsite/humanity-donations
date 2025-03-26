@@ -179,7 +179,10 @@ if ( ! function_exists( 'amnesty_get_campaign_field_options' ) ) {
 			return [];
 		}
 
-		$options = array_map( fn ( array $option ): string => $option['label'], $field['options'] );
+		$options = $field['options'];
+		if ( is_array( array_values( $options )[0] ) ) {
+			$options = array_map( fn ( array $option ): string => $option['label'], $options );
+		}
 
 		return array_filter( $options, $filter_callback );
 	}
