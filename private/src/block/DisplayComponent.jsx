@@ -20,6 +20,7 @@ const { BlockAlignmentToolbar, BlockControls, InspectorControls, MediaUploadChec
   wp.blockEditor;
 const { Button, PanelBody, SelectControl, TextControl, ToggleControl, Toolbar } =
   wp.components;
+const { select } = wp.data;
 const { Component, Fragment } = wp.element;
 const { applyFilters } = wp.hooks;
 const { __, sprintf } = wp.i18n;
@@ -429,14 +430,37 @@ class DisplayComponent extends Component {
    */
   blockControls() {
     const { editDonation, editSubscription } = this.state;
-    const { attributes, setAttributes } = this.props;
+    const { attributes, clientId, setAttributes } = this.props;
+    const showAlignment = (() => {
+      let show = true;
 
-    const alignmentToolbar = (
-      <BlockAlignmentToolbar
-        value={attributes.alignment}
-        onChange={(alignment) => setAttributes({ alignment })}
-      />
-    );
+      select('core/block-editor').getBlocks().forEach((block) => {
+        if (block.name !== 'amnesty-core/hero') {
+          return;
+        }
+
+        block.innerBlocks.forEach((inner) => {
+          if (inner.name !== this.props.name || inner.clientId !== clientId) {
+            return;
+          }
+
+          show = false;
+        });
+      });
+
+      return show;
+    })();
+
+
+    let alignmentToolbar = null;
+    if (showAlignment) {
+      alignmentToolbar = (
+        <BlockAlignmentToolbar
+          value={attributes.alignment}
+          onChange={(alignment) => setAttributes({ alignment })}
+        />
+      );
+    }
 
     if (editDonation && editSubscription) {
       return <BlockControls>{alignmentToolbar}</BlockControls>;
