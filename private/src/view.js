@@ -1,3 +1,5 @@
+import './style.scss';
+
 const cache = {};
 
 // find same-element siblings to a node
@@ -162,7 +164,7 @@ const initBlock = (block, index) => {
   );
 };
 
-export default () => {
+document.addEventListener('DOMContentLoaded', () => {
   const donationBlocks = Array.from(document.querySelectorAll('.wp-block-amnesty-wc-donation'));
 
   if (!donationBlocks.length) {
@@ -170,4 +172,4 @@ export default () => {
   }
 
   donationBlocks.map(initBlock);
-};
+});

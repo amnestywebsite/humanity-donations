@@ -1,4 +1,13 @@
 /**
+ * WordPress dependencies
+ */
+import { escapeRegExp, findIndex } from 'lodash';
+import { Button, MenuGroup, Spinner, TextControl, withSpokenMessages } from '@wordpress/components';
+import { compose, withInstanceId, withState } from '@wordpress/compose';
+import { Component, Fragment } from '@wordpress/element';
+import { __, _n, sprintf } from '@wordpress/i18n';
+
+/**
  * External dependencies
  */
 import Gridicon from 'gridicons';
@@ -7,35 +16,29 @@ import PropTypes from 'prop-types';
 /**
  * Internal dependencies
  */
-import { buildTermsTree } from '../utils/index.jsx';
+import { buildTermsTree } from './utils/index.jsx';
 import SearchListItem from './search-list-item.jsx';
 import Tag from './tag.jsx';
 
-const { escapeRegExp, findIndex } = lodash;
-const { Button, MenuGroup, Spinner, TextControl, withSpokenMessages } = wp.components;
-const { compose, withInstanceId, withState } = wp.compose;
-const { Component, Fragment } = wp.element;
-const { __, _n, sprintf } = wp.i18n;
-
 const defaultMessages = {
   /* translators: [ignore] */
-  clear: __('Clear all selected items', 'woocommerce-admin'),
+  clear: __('Clear all selected items', 'woocommerce'),
   /* translators: [ignore] */
-  list: __('Results', 'woocommerce-admin'),
+  list: __('Results', 'woocommerce'),
   /* translators: [ignore] */
-  noItems: __('No items found.', 'woocommerce-admin'),
+  noItems: __('No items found.', 'woocommerce'),
   /* translators: [ignore] */
-  noResults: __('No results for %s', 'woocommerce-admin'),
+  noResults: __('No results for %s', 'woocommerce'),
   /* translators: [ignore] */
-  search: __('Search for items', 'woocommerce-admin'),
+  search: __('Search for items', 'woocommerce'),
   selected: (n) =>
     sprintf(
       /* translators: [ignore] */
-      _n('%d item selected', '%d items selected', n, 'woocommerce-admin'),
+      _n('%d item selected', '%d items selected', n, 'woocommerce'),
       n,
     ),
   /* translators: [ignore] */
-  updated: __('Search results updated.', 'woocommerce-admin'),
+  updated: __('Search results updated.', 'woocommerce'),
 };
 
 /**
@@ -128,7 +131,7 @@ export class SearchListControl extends Component {
     }
 
     return list.map((item) => (
-      <Fragment key={item.id}>
+      <Fragment key={`item-${item.id}`}>
         {renderItem({
           item,
           isSelected: this.isSelected(item),
@@ -162,6 +165,7 @@ export class SearchListControl extends Component {
             <Gridicon icon="notice-outline" role="img" aria-hidden="true" focusable="false" />
           </span>
           <span className="woocommerce-search-list__not-found-text">
+            {/* eslint-disable-next-line @wordpress/valid-sprintf */}
             {search ? sprintf(messages.noResults, search) : messages.noItems}
           </span>
         </div>
@@ -190,13 +194,13 @@ export class SearchListControl extends Component {
         <div className="woocommerce-search-list__selected-header">
           <strong>{messages.selected(selectedCount)}</strong>
           {selectedCount > 0 ? (
-            <Button isLink isDestructive onClick={this.onClear} aria-label={messages.clear}>
-              {__('Clear all', 'woocommerce-admin')}
+            <Button variant="link" isDestructive onClick={this.onClear} aria-label={messages.clear}>
+              {__('Clear all', 'woocommerce')}
             </Button>
           ) : null}
         </div>
         {selected.map((item, i) => (
-          <Tag key={i} label={item.name} id={item.id} remove={this.onRemove} />
+          <Tag key={item.name} label={item.name} id={item.id} remove={this.onRemove} />
         ))}
       </div>
     );

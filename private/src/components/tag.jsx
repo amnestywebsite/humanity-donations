@@ -1,14 +1,16 @@
-/** @format */
+/**
+ * WordPress dependencies
+ */
+import { Button, Dashicon, Popover } from '@wordpress/components';
+import { withInstanceId } from '@wordpress/compose';
+import { useState } from '@wordpress/element';
+import { __, sprintf } from '@wordpress/i18n';
+
 /**
  * External dependencies
  */
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-
-const { Button, Dashicon, Popover } = wp.components;
-const { withInstanceId, withState } = wp.compose;
-const { Fragment } = wp.element;
-const { __, sprintf } = wp.i18n;
 
 /**
  * This component can be used to show an item styled as a "tag", optionally with an `X` + "remove"
@@ -16,17 +18,9 @@ const { __, sprintf } = wp.i18n;
  *
  * @return {object} -
  */
-const Tag = ({
-  id,
-  instanceId,
-  isVisible,
-  label,
-  popoverContents,
-  remove,
-  screenReaderLabel,
-  setState,
-  className,
-}) => {
+const Tag = ({ id, instanceId, label, popoverContents, remove, screenReaderLabel, className }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
   if (!label) {
     // A null label probably means something went wrong
     // @todo Maybe this should be a loading indicator?
@@ -40,10 +34,10 @@ const Tag = ({
   const labelId = `woocommerce-tag__label-${instanceId}`;
 
   const labelTextNode = (
-    <Fragment>
+    <>
       <span className="screen-reader-text">{screenReaderLabel || label}</span>
       <span aria-hidden="true">{label}</span>
-    </Fragment>
+    </>
   );
 
   return (
@@ -52,7 +46,7 @@ const Tag = ({
         <Button
           className="woocommerce-tag__text"
           id={labelId}
-          onClick={() => setState(() => ({ isVisible: true }))}
+          onClick={() => setIsVisible(true)}
           isToggled={isVisible}
         >
           {labelTextNode}
@@ -63,14 +57,14 @@ const Tag = ({
         </span>
       )}
       {popoverContents && isVisible && (
-        <Popover onClose={() => setState(() => ({ isVisible: false }))}>{popoverContents}</Popover>
+        <Popover onClose={() => setIsVisible(false)}>{popoverContents}</Popover>
       )}
       {remove && (
         <Button
           className="woocommerce-tag__remove"
           icon={<Dashicon icon="dismiss" size={20} />}
           onClick={remove(id)}
-          label={sprintf(/* translators: [ignore] */ __('Remove %s', 'woocommerce-admin'), label)}
+          label={sprintf(/* translators: [ignore] */ __('Remove %s', 'woocommerce'), label)}
           aria-describedby={labelId}
         />
       )}
@@ -102,4 +96,4 @@ Tag.propTypes = {
   screenReaderLabel: PropTypes.string,
 };
 
-export default withState({ isVisible: false })(withInstanceId(Tag));
+export default withInstanceId(Tag);

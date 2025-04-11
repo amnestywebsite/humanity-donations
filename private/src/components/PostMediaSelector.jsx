@@ -1,7 +1,10 @@
-const { MediaUpload } = wp.blockEditor;
-const { Button, Spinner } = wp.components;
-const { Component } = wp.element;
-const { __ } = wp.i18n;
+/**
+ * WordPress dependencies
+ */
+import { MediaUpload } from '@wordpress/block-editor';
+import { Button, Spinner } from '@wordpress/components';
+import { Component } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
 
 /* translators: [admin] label for image selector on donation block */
 const DEFAULT_SET_MEDIA_LABEL = __('Set Image', 'aidonations');

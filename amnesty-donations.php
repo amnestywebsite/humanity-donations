@@ -27,12 +27,12 @@ use WC_Product;
 
 require_once __DIR__ . '/includes/helpers.php';
 require_once __DIR__ . '/includes/kses.php';
-require_once __DIR__ . '/includes/render.php';
 
 if ( ! function_exists( 'get_plugin_data' ) ) {
 	require_once ABSPATH . '/wp-admin/includes/plugin.php';
 }
 
+new Init();
 
 /**
  * Plugin instantiation class
@@ -62,15 +62,9 @@ class Init {
 		add_action( 'init', [ $this, 'textdomain' ] );
 		add_action( 'init', [ $this, 'register_block' ] );
 		add_action( 'init', [ $this, 'register_meta' ] );
+		add_action( 'rest_api_init', [ $this, 'register_api_field' ] );
 
-		if ( version_compare( $GLOBALS['wp_version'], '5.8', '<' ) ) {
-			add_filter( 'block_categories', [ $this, 'register_category' ], 100 );
-		} else {
-			add_filter( 'block_categories_all', [ $this, 'register_category' ], 100 );
-		}
-
-		add_action( 'enqueue_block_assets', [ $this, 'register_assets' ] );
-		add_action( 'enqueue_block_editor_assets', [ $this, 'register_block_assets' ] );
+		add_filter( 'block_categories_all', [ $this, 'register_category' ], 100 );
 
 		add_filter( 'woocommerce_register_post_type_product', [ $this, 'modify_product_post_type' ] );
 		add_filter( 'woocommerce_add_to_cart_product_id', [ $this, 'handle_cart_addition' ] );
@@ -137,26 +131,7 @@ class Init {
 	 * @return void
 	 */
 	public function register_block(): void {
-		if ( ! current_theme_supports( 'woocommerce' ) ) {
-			return;
-		}
-
-		register_block_type(
-			'amnesty-wc/donation',
-			[
-				'render_callback' => 'amnesty_render_donation_block',
-				'attributes'      => [
-					'showDonation'     => [
-						'type'    => 'boolean',
-						'default' => true,
-					],
-					'showSubscription' => [
-						'type'    => 'boolean',
-						'default' => true,
-					],
-				],
-			]
-		);
+		register_block_type_from_metadata( untrailingslashit( __DIR__ ) . '/assets' );
 	}
 
 	/**
@@ -177,6 +152,27 @@ class Init {
 				'single'       => true,
 				'type'         => 'string',
 			]
+		);
+	}
+
+	/**
+	 * Register additional REST API fields
+	 *
+	 * @return void
+	 */
+	public function register_api_field(): void {
+		if ( ! defined( 'WOOCCM_PREFIX' ) ) {
+			return;
+		}
+
+		register_setting(
+			'options',
+			'wooccm_additional',
+			[
+				'type'         => 'array',
+				'default'      => [],
+				'show_in_rest' => true,
+			],
 		);
 	}
 
@@ -204,61 +200,6 @@ class Init {
 		}
 
 		return $categories;
-	}
-
-	/**
-	 * Register assets for front-end
-	 *
-	 * @return void
-	 */
-	public function register_assets(): void {
-		if ( is_admin() || 'wp-login.php' === $GLOBALS['pagenow'] ) {
-			return;
-		}
-
-		wp_enqueue_style( 'aidonations-style', plugins_url( '/assets/styles/app.css', __FILE__ ), [], $this->data['Version'], 'all' );
-		wp_enqueue_script( 'aidonations-app', plugins_url( '/assets/scripts/app.js', __FILE__ ), [], $this->data['Version'], true );
-
-		if ( ! current_theme_supports( 'woocommerce' ) ) {
-			return;
-		}
-
-		wp_localize_script(
-			'aidonations-app',
-			'amnestyWC',
-			[
-				'nonce'  => wp_create_nonce( 'amnesty-wc' ),
-				'wooccm' => amnesty_get_wooccm_fields(
-					fn ( $field ) => empty( $field['disabled'] ) && 'select' === $field['type'],
-				),
-			],
-		);
-	}
-
-	/**
-	 * Register assets for Gutenberg
-	 *
-	 * @return void
-	 */
-	public function register_block_assets(): void {
-		wp_enqueue_style( 'aidonations-style', plugins_url( '/assets/styles/app.css', __FILE__ ), [], $this->data['Version'], 'all' );
-		wp_enqueue_style( 'aidonations-editor', plugins_url( '/assets/styles/block.css', __FILE__ ), [ 'aidonations-style' ], $this->data['Version'], 'all' );
-		wp_enqueue_script( 'aidonations-editor', plugins_url( '/assets/scripts/block.js', __FILE__ ), [ 'lodash', 'wp-blocks', 'wc-settings' ], $this->data['Version'], true );
-
-		if ( ! current_theme_supports( 'woocommerce' ) ) {
-			return;
-		}
-
-		wp_localize_script(
-			'aidonations-editor',
-			'amnestyWC',
-			[
-				'nonce'  => wp_create_nonce( 'amnesty-wc' ),
-				'wooccm' => amnesty_get_wooccm_fields(
-					fn ( $field ) => empty( $field['disabled'] ) && 'select' === $field['type'],
-				),
-			],
-		);
 	}
 
 	/**
@@ -474,5 +415,3 @@ class Init {
 		return WC()->session->get( 'user_currency' ) ?: $currency;
 	}
 }
-
-new Init();

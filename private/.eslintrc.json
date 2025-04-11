@@ -8,8 +8,9 @@
   ],
   "plugins": ["prettier"],
   "globals": {
-    "wp": true,
-    "lodash": true
+    "React": true,
+    "ReactDOM": true,
+    "wp": true
   },
   "env": {
     "browser": true
@@ -21,12 +22,17 @@
   "rules": {
     "prettier/prettier": ["error"],
     "react/prop-types": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "@wordpress/i18n-text-domain": ["error", { "allowedTextDomain": ["aidonations", "amnesty", "default"]}]
+    "@wordpress/i18n-text-domain": ["error", {
+      "allowedTextDomain": [
+        "aidonations",
+        "default",
+        "woocommerce"
+      ]
+    }]
   },
   "settings": {
     "react": {
-      "version": "18.2.0"
+      "version": "18.3.1"
     }
   }
 }

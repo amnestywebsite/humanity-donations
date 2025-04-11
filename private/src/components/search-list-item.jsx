@@ -1,4 +1,10 @@
 /**
+ * WordPress dependencies
+ */
+import { escapeRegExp, first, last } from 'lodash';
+import { MenuItem } from '@wordpress/components';
+
+/**
  * External dependencies
  */
 import PropTypes from 'prop-types';
@@ -11,10 +17,7 @@ import {
   IconCheckUnchecked,
   IconRadioSelected,
   IconRadioUnselected,
-} from '../utils/icons.jsx';
-
-const { escapeRegExp, first, last } = lodash;
-const { MenuItem } = wp.components;
+} from './utils/icons.jsx';
 
 function getHighlightedName(name, search) {
   if (!search) {

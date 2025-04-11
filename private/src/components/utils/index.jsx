@@ -1,9 +1,9 @@
 /**
  * External dependencies
  */
-const { flatten, forEach, groupBy, keyBy, uniqBy } = lodash;
-const { apiFetch } = wp;
-const { addQueryArgs } = wp.url;
+import { flatten, forEach, groupBy, keyBy, uniqBy } from 'lodash';
+import apiFetch from '@wordpress/api-fetch';
+import { addQueryArgs } from '@wordpress/url';
 
 const getProductsRequests = ({ selected = [], search = '', queryArgs = [] }) => {
   const defaultArgs = {

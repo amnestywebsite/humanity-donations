@@ -1,0 +1,100 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "amnesty-wc/donation",
+  "title": "Donation",
+  "description": "Add a Donation block",
+  "category": "amnesty-wc",
+  "keywords": ["donation", "donate", "subscription", "subscribe"],
+  "icon": "cart",
+  "textdomain": "aidonations",
+  "editorScript": "file:./index.js",
+  "editorStyle": ["file:./style-view.css", "file:./index.css"],
+  "viewStyle": "file:./style-view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "supports": {
+    "align": false,
+    "className": true,
+    "customClassName": true,
+    "multiple": false
+  },
+  "attributes": {
+    "showDonation": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubscription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCampaignOptions": {
+      "type": "boolean",
+      "default": true
+    },
+    "showImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "donation": {
+      "type": "array",
+      "default": []
+    },
+    "subscription": {
+      "type": "array",
+      "default": []
+    },
+    "donationLabel": {
+      "type": "string",
+      "default": "One-off"
+    },
+    "subscriptionLabel": {
+      "type": "string",
+      "default": "Recurring"
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "titleTag": {
+      "type": "integer",
+      "default": 2,
+      "enum": [1, 2, 3, 4, 5, 6]
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "image": {
+      "type": "integer",
+      "default": 0
+    },
+    "variationLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "campaignFieldLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "campaignDescription": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Donate"
+    },
+    "alignment": {
+      "type": "string",
+      "default": "none",
+      "enum": ["none", "left", "center", "right"]
+    }
+  },
+  "styles": [
+    {
+      "label": "Dark Background",
+      "name": "dark"
+    }
+  ]
+}

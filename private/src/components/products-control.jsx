@@ -1,4 +1,9 @@
 /**
+ * WordPress dependencies
+ */
+import { __, _n, sprintf } from '@wordpress/i18n';
+
+/**
  * External dependencies
  */
 import PropTypes from 'prop-types';
@@ -9,10 +14,8 @@ import PropTypes from 'prop-types';
  * These were originally going to be imported from WC as dependencies,
  * but it increased the bundle size dramatically (15MB!). Copypasta.
  */
-import withSearchedProducts from '../hocs/with-searched-products.jsx';
+import withSearchedProducts from './with-searched-products.jsx';
 import { SearchListControl } from './search-list-control.jsx';
-
-const { __, _n, sprintf } = wp.i18n;
 
 /**
  * The products control exposes a custom selector for searching and selecting
@@ -27,7 +30,7 @@ const { __, _n, sprintf } = wp.i18n;
  *
  * @return {Function} A functional component.
  */
-const ProductsControl = ({ onChange, onSearch, selected, products, isLoading, isSingle }) => {
+const ProductsControl = ({ onChange, onSearch, selected = [], products = [], isLoading = true, isSingle = false }) => {
   const messages = {
     /* translators: [ignore] */
     clear: __('Clear all products', 'woocommerce'),
@@ -68,13 +71,6 @@ ProductsControl.propTypes = {
   products: PropTypes.array,
   isLoading: PropTypes.bool,
   isSingle: PropTypes.bool,
-};
-
-ProductsControl.defaultProps = {
-  selected: [],
-  products: [],
-  isLoading: true,
-  isSingle: false,
 };
 
 export default withSearchedProducts(ProductsControl);

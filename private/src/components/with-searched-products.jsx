@@ -1,4 +1,10 @@
 /**
+ * WordPress dependencies
+ */
+import { createHigherOrderComponent } from '@wordpress/compose';
+import { Component } from '@wordpress/element';
+
+/**
  * External dependencies
  */
 import PropTypes from 'prop-types';
@@ -6,10 +12,7 @@ import PropTypes from 'prop-types';
 /**
  * Internal dependencies
  */
-import { getProducts } from '../utils/index.jsx';
-
-const { createHigherOrderComponent } = wp.compose;
-const { Component } = wp.element;
+import { getProducts } from './utils/index.jsx';
 
 /**
  * A higher order component that enhances the provided component with products
