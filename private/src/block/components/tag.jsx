@@ -6,8 +6,8 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 const { Button, Dashicon, Popover } = wp.components;
-const { withInstanceId, withState } = wp.compose;
-const { Fragment } = wp.element;
+const { withInstanceId } = wp.compose;
+const { Fragment, useState } = wp.element;
 const { __, sprintf } = wp.i18n;
 
 /**
@@ -19,14 +19,14 @@ const { __, sprintf } = wp.i18n;
 const Tag = ({
   id,
   instanceId,
-  isVisible,
   label,
   popoverContents,
   remove,
   screenReaderLabel,
-  setState,
   className,
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
   if (!label) {
     // A null label probably means something went wrong
     // @todo Maybe this should be a loading indicator?
@@ -52,7 +52,7 @@ const Tag = ({
         <Button
           className="woocommerce-tag__text"
           id={labelId}
-          onClick={() => setState(() => ({ isVisible: true }))}
+          onClick={() => setIsVisible(true)}
           isToggled={isVisible}
         >
           {labelTextNode}
@@ -63,7 +63,7 @@ const Tag = ({
         </span>
       )}
       {popoverContents && isVisible && (
-        <Popover onClose={() => setState(() => ({ isVisible: false }))}>{popoverContents}</Popover>
+        <Popover onClose={() => setIsVisible(false)}>{popoverContents}</Popover>
       )}
       {remove && (
         <Button
@@ -102,4 +102,4 @@ Tag.propTypes = {
   screenReaderLabel: PropTypes.string,
 };
 
-export default withState({ isVisible: false })(withInstanceId(Tag));
+export default withInstanceId(Tag);
