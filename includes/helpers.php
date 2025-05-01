@@ -197,12 +197,17 @@ if ( ! function_exists( 'amnesty_get_donation_obj_data' ) ) {
 	 * @return array
 	 */
 	function amnesty_get_donation_obj_data( $obj ) {
+		$nyp = false;
+		if ( class_exists( '\WC_Name_Your_Price_Helpers', false ) ) {
+			$nyp = WC_Name_Your_Price_Helpers::is_nyp( $obj );
+		}
+
 		return [
 			'pid'  => $obj->get_id(),
 			'name' => $obj->get_name(),
 			'size' => $obj->get_attribute( 'size' ),
 			'link' => $obj->get_permalink(),
-			'nyp'  => WC_Name_Your_Price_Helpers::is_nyp( $obj ),
+			'nyp'  => $nyp,
 		];
 	}
 }
@@ -281,7 +286,11 @@ if ( ! function_exists( 'amnesty_donations_get_nyp_input' ) ) {
 	 * @return string
 	 */
 	function amnesty_donations_get_nyp_input( int $variation_id = 0, float $default_price = 100 ): string {
-		$default = $default_price ?: WC_Name_Your_Price_Helpers::get_suggested_price( $variation_id ) ?: 100;
+		$default = $default_price ?: 100;
+		if ( class_exists( '\WC_Name_Your_Price_Helpers', false ) && WC_Name_Your_Price_Helpers::get_suggested_price( $variation_id ) ) {
+			$default = WC_Name_Your_Price_Helpers::get_suggested_price( $variation_id );
+		}
+
 		$product = wc_get_product( $variation_id );
 
 		$type = 'default';
@@ -322,7 +331,11 @@ if ( ! function_exists( 'amnesty_donation_product_variations' ) ) {
 		$data = [];
 
 		foreach ( $variations as $variation ) {
-			$nyp = WC_Name_Your_Price_Helpers::is_nyp( $variation );
+			$nyp = false;
+
+			if ( class_exists( '\WC_Name_Your_Price_Helpers', false ) ) {
+				$nyp = WC_Name_Your_Price_Helpers::is_nyp( $variation );
+			}
 
 			$data[] = [
 				'id'    => $variation->get_id(),
