@@ -1,6 +1,6 @@
 # Humanity Donations
 
-This plugin is now archived. A new donation plugin will be released soon. 
+This plugin is no longer supported, as it has been superseded by a [new donations plugin](https://github.com/amnestywebsite/humanity-stripe-donations/) that does not rely upon WooCommerce.
 
 This plugin leverages WooCommerce to provide support for individual and recurring, fixed and variable price donations.  
 
